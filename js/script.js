@@ -11,10 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		var sleepGot = parseFloat($("#sleep-hours").val());
 		if(sleepGot === NaN) return;
 
-		data = {};
-		options = {};
+		var sleepDebt = sleepNeeded - sleepGot;
+		sleepDebt *= 7;
+		$("#main-content").append("<p>Your total sleep debt is approximately: " + sleepDebt + " hours.</p>");
 
-		$("#main-content").append("<canvas style=\"display:block\" id=\"chart1\" width=\"300\" height=\"300\"></canvas>");
+		$("#main-content").append("<canvas style=\"display:block\" id=\"chart1\" width=\"300\" height=\"100\"></canvas>");
 		var ctx = $("#chart1");
 		var myChart = new Chart(ctx, {
 		    type: 'bar',
@@ -23,11 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		        datasets: [{
 		            label: 'Sleep Needed',
 		            data: [sleepNeeded, sleepNeeded, sleepNeeded, sleepNeeded, sleepNeeded, sleepNeeded, sleepNeeded],
-		            backgroundColor: #ff0000
+		            backgroundColor: "#0066ff"
 		        }, {
 		        	label: 'Sleep Gotten',
 		        	data: [sleepGot, sleepGot, sleepGot, sleepGot, sleepGot, sleepGot, sleepGot],
-		        	backgroundColor: #00ff00
+		        	backgroundColor: "#b30000"
 		        }]
 		    },
 		    options: {
