@@ -29,6 +29,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src='js/chart.js'></script>
+    <script src="js/script.js"></script>
 </head>
 
 <body>
@@ -85,7 +87,7 @@
     </header>
 
     <!-- Main Content -->
-    <div class="container">
+    <div id="main-content" class="container">
         <h3>
             You may have more sleep debt than you know. Use our tool to find out how much you have
             and what you can do to take care of it. 
@@ -98,7 +100,7 @@
         Please enter your age:
         <select id="age-range">
             <option value="13under">13 and Under</option>
-            <option value="144to17">14-17</option>
+            <option value="14to17">14-17</option>
             <option value="18to25">18-25</option>
             <option value="26up">26 and Up</option>
         </select>
@@ -107,7 +109,6 @@
         <br>
         <br>
         <button id="calculate">Calculate Sleep Debt</button>
-        <script src="js/script.js"></script>
     </div>
     <hr>
 
